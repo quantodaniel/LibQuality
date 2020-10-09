@@ -1,0 +1,26 @@
+version: "3"
+services:
+  api:
+    image: node:lts-alpine
+    container_name: LibQualityApi
+    working_dir: /home/app
+    volumes:
+      - .:/home/app
+    depends_on:
+      - mongo
+    command: npm start
+    environment:
+      VIRTUAL_PORT: 3000
+      NODE_ENV: development
+    ports:
+      - "3000:3000"
+  mongo:
+    image: mongo
+    container_name: LibQualityDB
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-volume:/data/db
+
+volumes:
+  mongo-volume:

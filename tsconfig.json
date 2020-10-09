@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "target": "es2017",
+    "module": "commonjs",
+    "allowJs": true,
+    "outDir": "./build",
+    "baseUrl": "./src",
+    "paths": {
+      "@config": ["config"],
+      "@routes": ["routes"],
+      "@interfaces/*": ["interfaces/*"],
+      "@repositories/*": ["repositories/*"],
+      "@schemas/*": ["schemas/*"],
+      "@services/*": ["services/*"],
+      "@useCases/*": ["useCases/*"]
+    },
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true
+  },
+  "include": ["src/**/*.ts"],
+  "exclude": ["node_modules"]
+}
