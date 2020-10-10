@@ -4,7 +4,7 @@ import helmet from "helmet";
 import bodyParser from "body-parser";
 import cors from "cors";
 
-import routes from "./routes";
+import routes from "@routes";
 
 class App {
   express: Express;
