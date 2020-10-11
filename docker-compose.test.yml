@@ -1,20 +1,18 @@
 version: "3"
 services:
-  api:
+  api-test:
     image: node:lts-alpine
-    container_name: LibQualityApi
+    container_name: LibQualityTests 
     working_dir: /home/app
     volumes:
       - .:/home/app
     depends_on:
-      - mongo
-    command: npm start
-    ports:
-      - "3000:3000"
+      - mongo 
     networks:
-      - LibQuality
+      - LibQuality 
+    command: npm run test:docker 
   mongo:
-    image: mongo
+    image: mongo 
     container_name: LibQualityDB
     ports:
       - "27017:27017"
@@ -33,3 +31,6 @@ volumes:
 networks:
   LibQuality:
     driver: bridge
+
+
+

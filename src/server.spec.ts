@@ -1,5 +1,5 @@
 import request from "supertest";
-import app from "./app";
+import app from "@src/app";
 
 describe("Server setup", () => {
   it("should return status 200 and text 'ok'", async () => {

@@ -1,7 +1,7 @@
-import { GithubService } from "@services/GithubService";
-
 import { SearchHandler } from "./handler";
 import { SearchController } from "./controller";
+
+import { GithubService } from "@src/services/GithubService";
 
 export function CreateSearchController() {
   const githubService = new GithubService();

@@ -6,21 +6,14 @@
     "outDir": "./build",
     "baseUrl": "./",
     "paths": {
-      "@app": ["src/app"],
-      "@config": ["src/config"],
-      "@routes": ["src/routes"],
-      "@helpers": ["src/helpers"],
-      "@validators/*": ["src/validators/*"],
-      "@interfaces/*": ["src/interfaces/*"],
-      "@implementations/*": ["src/repositories/implementations/*"],
-      "@schemas/*": ["src/repositories/schemas/*"],
-      "@services/*": ["src/services/*"],
-      "@useCases/*": ["src/useCases/*"]
+      "@src/*": ["src/*"]
     },
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true
   },
-  "include": ["src/**/*.ts"],
+  "include": [ 
+    "src/**/*.ts"
+  ],
   "exclude": ["node_modules"]
 }

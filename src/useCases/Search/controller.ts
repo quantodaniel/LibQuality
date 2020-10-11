@@ -1,4 +1,4 @@
-import { GithubService } from "@services/GithubService";
+import { GithubService } from "@src/services/GithubService";
 
 export class SearchController {
   constructor(private githubService: GithubService) {}

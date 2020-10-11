@@ -1,13 +1,13 @@
 import { Request, Response, Router } from "express";
 import { errors } from "celebrate";
 
-import { MetadataValidator } from "@validators/Metadata";
-import { SearchValidator } from "@validators/Search";
-import { AnalyticsValidator } from "@validators/Analytics";
+import { MetadataValidator } from "@src/validators/Metadata";
+import { SearchValidator } from "@src/validators/Search";
+import { AnalyticsValidator } from "@src/validators/Analytics";
 
-import { CreateMetadataHandler } from "@useCases/Metadata";
-import { CreateSearchHandler } from "@useCases/Search";
-import { CreateAnalyticsHandler } from "@useCases/Analytics";
+import { CreateMetadataHandler } from "@src/useCases/Metadata";
+import { CreateSearchHandler } from "@src/useCases/Search";
+import { CreateAnalyticsHandler } from "@src/useCases/Analytics";
 
 const routes = Router();
 
@@ -19,14 +19,14 @@ routes.get("/search", SearchValidator, function (req: Request, res: Response) {
   return searcHandler.findRepoByName(req, res);
 });
 
-routes.get("/repos/:repo*/metadata", MetadataValidator, function (
+routes.get("/repos/:owner/:repo/metadata", MetadataValidator, function (
   req: Request,
   res: Response
 ) {
   return metadataHandler.findByRepo(req, res);
 });
 
-routes.get("/repos/:repo*/analytics", AnalyticsValidator, function (
+routes.get("/repos/:owner/:repo/analytics", AnalyticsValidator, function (
   req: Request,
   res: Response
 ) {
