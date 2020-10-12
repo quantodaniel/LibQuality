@@ -79,10 +79,10 @@ GET /search/?q=react
 
 ```ts
 [
- {
+  {
     owner: string;
     repo: string;
- }
+  }
 ]
 ```
 
@@ -112,9 +112,14 @@ GET /repos/:owner/:repo/analytics
 
 **Response:**
 
-```js
-{
-}
+```ts
+[
+  {
+    _id: Date;
+    open: number;
+    closed: number;
+  }
+]
 ```
 
 ## Running tests
@@ -124,3 +129,23 @@ Open your OS Terminal and run these commands:
 ```shell
 yarn run test
 ```
+
+## Development
+
+Aiming performance and blazing fast development time this API follows the SOLID pattern and also uses some libs to better communicate with Github API.
+
+| Lib                   | Description                                    |
+| --------------------- | ---------------------------------------------- |
+| @octokit/rest         | GitHub REST API client for JavaScript          |
+| @octokit/plugin-retry | Retries requests for server 4xx/5xx responses  |
+| express               | Backend web application framework              |
+| body-parser           | Node.js body parsing middleware                |
+| celebrate             | Wraps the JOI validation library               |
+| cors                  | Manages cross-origin resource sharing          |
+| date-fns              | Toolset for manipulating dates                 |
+| dotenv                | Loads environment variables from a .env file   |
+| helmet                | Secure Express by setting various HTTP headers |
+| jest                  | JavaScript Testing Framework                   |
+| mongoose              | Schema based solution for MongoDB validation   |
+| morgan                | HTTP request logger                            |
+| request-ip            | Module for retrieving a request's IP address   |

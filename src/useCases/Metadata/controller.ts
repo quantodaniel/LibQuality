@@ -9,7 +9,7 @@ import {
 } from "@src/interface/Repository";
 
 import { ISearchRepository } from "@src/interface/Search";
-import { pick } from "@src/helpers";
+import { pick, normalizeDate } from "@src/helpers";
 
 export class MetadataController {
   constructor(
@@ -54,8 +54,8 @@ export class MetadataController {
     const issues = issuesList
       .filter((issue) => !issue.pull_request)
       .map((issue) => ({
-        created_at: <any>issue.created_at,
-        closed_at: <any>issue.closed_at,
+        created_at: normalizeDate(issue.created_at),
+        closed_at: normalizeDate(issue.closed_at),
         state: <any>issue.state,
         labels: issue.labels.map((label) => label.name),
       }));

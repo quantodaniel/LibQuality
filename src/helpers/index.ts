@@ -8,3 +8,12 @@ export function pick<T extends object, U extends keyof T>(
   }
   return ret;
 }
+
+export function normalizeDate(dateStr: string): Date | null {
+  if (dateStr) {
+    const date = new Date(dateStr);
+    date.setHours(12, 0, 0, 0);
+    return date;
+  }
+  return null;
+}

@@ -5,6 +5,15 @@ export class AnalyticsHandler {
   constructor(private analyticsController: AnalyticsController) {}
 
   async findByRepo(req: Request, res: Response) {
-    res.send("ok");
+    const { owner, repo } = req.params;
+    const statistics = await this.analyticsController.findByRepo(owner, repo);
+
+    if (statistics.length) {
+      res.json(statistics);
+    } else {
+      const repository = `${owner}/${repo}`;
+      const body = `repository '${repository}' not found. Try to get metadata first at /repos/${repository}/metadata`;
+      res.status(400).json({ message: body }).end();
+    }
   }
 }

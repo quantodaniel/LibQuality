@@ -1,5 +1,11 @@
 import { Document } from "mongoose";
 
+export interface IRepoStatistics {
+  _id: Date;
+  open: number;
+  closed: number;
+}
+
 export interface IRepoIssue {
   created_at: Date;
   closed_at: Date;
@@ -27,4 +33,5 @@ export interface IRepoRepository {
   findOne(owner: string, repo: string): Promise<IRepoDataModel>;
   update(id: string, data: IRepoData): Promise<void>;
   create(data: IRepoData): Promise<IRepoDataModel>;
+  statistics(owner: string, repo: string): Promise<IRepoStatistics[]>;
 }
