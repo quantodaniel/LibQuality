@@ -29,7 +29,7 @@ The following premises were taken for the purpose of this development:
 
 - No authentication methods or token validations are in place
 - The current IP accessing the API is used as User key
-- Given the [Github Rate limit rules](https://docs.github.com/en/free-pro-team@latest/rest/reference/rate-limit) only one month of data can be retrieved
+- Given the [Github rate limit rules](https://docs.github.com/en/free-pro-team@latest/rest/reference/rate-limit) (just 60 requests each hour) only the last month of data will be fetched
 
 ## Installation
 
