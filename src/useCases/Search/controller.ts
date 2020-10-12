@@ -9,8 +9,9 @@ export class SearchController {
 
     const response = items.map((item) => {
       return {
-        repo: item.full_name,
         owner: item.owner.login,
+        repo: item.name,
+        metadata_url: `/repos/${item.full_name}/metadata`,
       };
     });
 

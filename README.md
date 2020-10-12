@@ -33,7 +33,7 @@ The following premises were taken for the purpose of this development:
 
 ## Installation
 
-First install all the dependencies required to run containers with docker and start the server.
+First install all the dependencies required to run containers with docker and starting the server.
 
 LibQuality requires the following tools to run:
 
@@ -82,6 +82,7 @@ GET /search/?q=react
   {
     owner: string;
     repo: string;
+    metadata_url: "/repos/:owner/:repo/metadata";
   }
 ]
 ```
